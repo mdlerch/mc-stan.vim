@@ -1,7 +1,8 @@
 " Vim syntax file
 " Language: stan
 " Maintainer: Michael Lerch <mdlerch@gmail.com>
-" Last Change: Fri Sep 27, 2013
+" Created: Fri 27 Sep 2013 10:26:15 PM MDT
+" Last Modified: Fri 27 Sep 2013 10:26:15 PM MDT
 " Filenames: *.stan
 
 
@@ -38,8 +39,6 @@ syn keyword stanDist multi_student_t wishart inv_wishart lkj_cov lkj_corr
 syn keyword stanDist lkj_corr_cholesky
 
 syn keyword stanControl if else for while
-
-
 
 
 
