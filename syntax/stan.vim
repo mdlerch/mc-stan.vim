@@ -2,7 +2,7 @@
 " Language: stan
 " Maintainer: Michael Lerch <mdlerch@gmail.com>
 " Created: Fri 27 Sep 2013 10:26:15 PM MDT
-" Last Modified: Fri 27 Sep 2013 10:26:15 PM MDT
+" Last Modified: Sat 28 Sep 2013 08:27:54 AM MDT
 " Filenames: *.stan
 
 
@@ -14,7 +14,9 @@ setlocal iskeyword=@,48-57,_,.
 
 syn case match
 
-syn match stanComment contains=@Spell "#.*"
+" Comments
+syn match stanComment contains=@Spell "//.*"
+syn region stanComment start="\/\*" end="\*\/" contains=@stanComment,@Spell
 
 " Blocks
 syn keyword stanBlock data parameters model
@@ -47,5 +49,6 @@ hi def link stanBlock Conditional
 hi def link stanDist Function
 hi def link stanControl Conditional
 hi def link stanType Type
+hi def link stanComment Comment
 
 let b:current_syntax="stan"
