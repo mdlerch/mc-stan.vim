@@ -5,7 +5,7 @@ mc-stan.vim
 
 ---
 
-This plug-in is currently usable.
+This plug-in is usable but currently under heavy development.
 
 #### Features
 
@@ -17,4 +17,4 @@ This plug-in is currently usable.
 
 
 
-Last Modified: Sat 28 Sep 2013 08:57:35 PM MDT
+Last Modified: Sat 28 Sep 2013 08:58:32 PM MDT
