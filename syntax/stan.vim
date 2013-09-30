@@ -2,7 +2,7 @@
 " Language: stan
 " Maintainer: Michael Lerch <mdlerch@gmail.com>
 " Created: Fri 27 Sep 2013 10:26:15 PM MDT
-" Last Modified: Sun 29 Sep 2013 02:06:16 PM MDT
+" Last Modified: Mon 30 Sep 2013 01:08:44 PM MDT
 " Filenames: *.stan
 
 
@@ -62,7 +62,7 @@ syn keyword stanControl if else for while
 
 
 " Delimiters
-syn match stanDelim "[\[,;:\]<>]"
+syn match stanDelim "[,;:<>]"
 
 
 
@@ -73,7 +73,20 @@ syn match stanSpecOperator "<-"
 " regular operators
 syn match stanOperator "[\+\-\*!^~/:]"
 
+" unmatched paren
 
+syn region stanRegion start="(" end=")" matchgroup=Delimeter transparent contains=ALLBUT,stanUnmatch,stanUnmatchC,StanUnmatchB
+syn region stanRegion start="{" end="}" matchgroup=Delimeter transparent contains=ALLBUT,stanUnmatch,stanUnmatchB,stanUnmatchP
+syn region stanRegion start="\[" end="\]" matchgroup=Delimeter transparent contains=ALLBUT,stanUnmatch,stanUnmatchP,stanUnmatchC
+
+syn match stanUnmatch "[)\]}]"
+syn match stanUnmatchC "[)\]]" contained
+syn match stanUnmatchP "[}\]]" contained
+syn match stanUnmatchB "[)}]" contained
+hi def link stanUnmatch Error
+hi def link stanUnmatchC Error
+hi def link stanUnmatchP Error
+hi def link stanUnmatchB Error
 
 
 " Comments
