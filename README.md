@@ -15,6 +15,6 @@ This plug-in is usable but currently under heavy development.
 
 - Snippets using the [UltiSnips](http://github.com/SirVer/ultisnips) engine.
 
+- Indentation using cindent
 
-
-Last Modified: Sat 28 Sep 2013 08:58:32 PM MDT
+Last Modified: Mon 30 Sep 2013 09:22:27 PM MDT
