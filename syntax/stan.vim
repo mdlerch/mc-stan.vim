@@ -2,7 +2,7 @@
 " Language: stan
 " Maintainer: Michael Lerch <mdlerch@gmail.com>
 " Created: Fri 27 Sep 2013 10:26:15 PM MDT
-" Last Modified: Mon 30 Sep 2013 01:08:44 PM MDT
+" Last Modified: Tue 01 Oct 2013 06:05:04 PM MDT
 " Filenames: *.stan
 
 
@@ -56,6 +56,27 @@ syn keyword stanDist multi_student_t wishart inv_wishart lkj_cov lkj_corr
 syn keyword stanDist lkj_corr_cholesky
 syn match stanDist "beta("me=e-1
 syn match stanDist "gamma("me=e-1
+
+" build in functions
+syn keyword stanFunc abs fabs fdim fmin fmax min max fmod floor ceil round trunc
+syn keyword stanFunc sqrt cbrt square exp exp2 log log2 log10 pow hypot
+syn keyword stanFunc sin cos tan acos asin atan atan2 cosh sinh tanch acosh asinh atanh
+syn keyword stanFunc logit inv_logit inv_cloglog erf erfc Phi binary_log_loss
+syn keyword stanFunc tgamma lgamma lbeta binomial_coefficient_log
+syn keyword stanFunc expml fma multiply_log loglp loglm loglp_exp log_sum_exp
+syn keyword stanFunc log_inv_logit loglm_inv_logit
+syn keyword stanFunc sum prod mean variance sd log_sum_exp rows cols
+syn keyword stanFunc cumulative_sum dot_product dot_self tcrossprod crossprod
+syn keyword stanFunc muliply_lower_tri_self_transpose diag_pre_multiply diag_post_multiply
+syn keyword stanFunc diagonal diag_matrix col row block softmax
+syn keyword stanFunc mdivide_right_tri_low mdivide_left_tri_low trace determinant
+syn keyword stanFunc inverse eignvalues_sym cholesky_decompose singular_values
+hi def link stanFunc Function
+
+" mathematical constants
+syn match stanConstants "pi()\|e()\|sqrt2()\|log2()\|log10()\|epsilon\|negative_epsilon()"
+syn match stanConstants "not_a_number()\|positive_infinity()\|negative_infinity()"
+hi def link stanConstants Constant
 
 " Control
 syn keyword stanControl if else for while
