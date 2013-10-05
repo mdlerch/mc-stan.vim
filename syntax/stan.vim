@@ -2,7 +2,7 @@
 " Language: stan
 " Maintainer: Michael Lerch <mdlerch@gmail.com>
 " Created: Fri 27 Sep 2013 10:26:15 PM MDT
-" Last Modified: Tue 01 Oct 2013 06:05:04 PM MDT
+" Last Modified: Sat 05 Oct 2013 02:54:43 PM MDT
 " Filenames: *.stan
 
 
@@ -36,6 +36,7 @@ hi def link stanVarNum Normal
 syn keyword stanBlock data parameters model
 syn match stanBlock "generated quantities"
 syn match stanBlock "transformed parameters"
+syn match stanBlock "transformed data"
 
 
 " data types
