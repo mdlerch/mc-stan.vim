@@ -17,4 +17,3 @@ This plug-in is usable but currently under heavy development.
 
 - Indentation using cindent
 
-Last Modified: Mon 30 Sep 2013 09:22:27 PM MDT

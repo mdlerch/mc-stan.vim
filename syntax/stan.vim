@@ -1,8 +1,6 @@
 " Vim syntax file
 " Language: stan
 " Maintainer: Michael Lerch <mdlerch@gmail.com>
-" Created: Fri 27 Sep 2013 10:26:15 PM MDT
-" Last Modified: Fri 18 Oct 2013 10:15:02 PM MDT
 " Filenames: *.stan
 
 
