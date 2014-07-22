@@ -171,6 +171,7 @@ syn match stanUnmatchB "[)}]" contained
 
 " Comments
 syn match stanComment contains=@Spell "//.*"
+syn match stanComment contains=@Spell "#.*"
 syn region stanComment start="\/\*" end="\*\/" contains=@stanComment,@Spell
 
 hi def link stanUnmatch Error
