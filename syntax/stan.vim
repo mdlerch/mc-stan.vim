@@ -135,6 +135,10 @@ syn keyword stanFunc muliply_lower_tri_self_transpose diag_pre_multiply diag_pos
 syn keyword stanFunc diagonal diag_matrix col row block softmax
 syn keyword stanFunc mdivide_right_tri_low mdivide_left_tri_low trace determinant
 syn keyword stanFunc inverse eignvalues_sym cholesky_decompose singular_values
+syn keyword stanFunc increment_log_prob
+
+" deprecated
+syn keyword stanDepr lp__
 
 
 " mathematical constants
@@ -178,6 +182,7 @@ hi def link stanUnmatch Error
 hi def link stanUnmatchC Error
 hi def link stanUnmatchP Error
 hi def link stanUnmatchB Error
+hi def link stanDepr Error
 hi def link stanConstants Constant
 hi def link stanFunc Function
 hi def link stanBlock Conditional
