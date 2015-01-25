@@ -1,0 +1,26 @@
+snippet template_binomial "binomial skeleton" b
+data {
+	${1:int<lower=0> nobs}; // number of objservations
+	${2:int<lower=0> k}; // number of predictors (including intercept)
+	${3:int<lower=0> n[nobs]}; // number of trials for observation i
+	${4:int<lower=0> y[nobs]}; // Observations
+	${5:real X[nobs, k]}; // predictor matrix (including intercept)
+}
+
+parameters {
+	${6:real beta[k]};
+}
+
+transformed parameters {
+	${7:real p[nobs]};
+}
+
+model {
+	${0:beta ~ normal(0, sigma_beta_2);
+	y[i] ~ binomial_logit(n[i], p);
+}
+
+generated quantities {
+}
+endsnippet
+
