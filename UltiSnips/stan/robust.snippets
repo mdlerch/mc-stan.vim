@@ -1,16 +1,16 @@
 snippet template_robust "robust linear regression with t errors" b
 // pg 39
 data {
-	${1:int<lower=0> N}; // number of objservations
-	${2:int<lower=0> K}; // number of predictors (including intercept)
-	${3:matrix[N, K] X}; // predictor matrix
-	${4:vector[N] y}; // Observations
-	${5:real<lower=0> nu}; //degrees of freedom
+	int<lower=0> N; // number of objservations
+	int<lower=0> K; // number of predictors (including intercept)
+	matrix[N, K] X; // predictor matrix
+	vector[N] y; // Observations
+	real<lower=0> nu; //degrees of freedom
 }
 
 parameters {
-	${6:vector[K] beta};
-	${7:real<lower=0> sigma};
+	vector[K] beta;
+	real<lower=0> sigma;
 }
 
 transformed parameters {
@@ -19,8 +19,7 @@ transformed parameters {
 model {
 	// beta ~ normal(0, 1000);
 	// sigma ~ normal(0, 1000);
-	${8:y ~ student_t(nu, X * beta, sigma)};
-	$0
+	y ~ student_t(nu, X * beta, sigma);
 }
 
 generated quantities {

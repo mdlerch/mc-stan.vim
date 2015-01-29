@@ -1,0 +1,21 @@
+snippet template_ar1 "ar(1) time series model" b
+// pg 59
+data {
+	int<lower=0> N; // number of observations
+	vector[N] y; // observations
+}
+parameters {
+	real alpha;
+	real beta;
+	real sigma;
+}
+model {
+	// efficient
+	tail(y, N - 1) ~ normal(alpha + beta * head(y, N - 1), sigma);
+	// readable
+	//for (n in 2:N)
+	//{
+		//y[n] ~ normal(alpha + beta * y[n - 1], sigma);
+	//}
+}
+endsnippet

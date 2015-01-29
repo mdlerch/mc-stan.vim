@@ -1,15 +1,15 @@
 snippet template_multi_logit "extension of bernoulli to multi cat" b
 // pg 41
 data {
-	${1:int<lower=0> N}; // number of objservations
-	${2:int<lower=0> K}; // number of predictors (including intercept)
-	${3:vector[K] X[N]}; // predictor matrix
-	${4:int<lower=0> G}; // number of categories
-	${4:int<lower=0> y[N]}; // Observations
+	int<lower=0> N; // number of objservations
+	int<lower=0> K; // number of predictors (including intercept)
+	vector[K] X[N]; // predictor matrix
+	int<lower=0> G; // number of categories
+	int<lower=0> y[N]; // Observations
 }
 
 parameters {
-	${5:vector[G, K] beta};
+	vector[G, K] beta;
 }
 
 transformed parameters {
@@ -28,7 +28,6 @@ model {
 	{
 		y[n] ~ categorical(softmax(beta * x[n]));
 	}
-	$0
 }
 
 generated quantities {

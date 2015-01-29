@@ -1,14 +1,14 @@
 snippet template_bernoulli "bernoulli outcomes regression" b
 // pg 40
 data {
-	${1:int<lower=0> N}; // number of objservations
-	${2:int<lower=0> K}; // number of predictors (including intercept)
-	${3:matrix[N, K] X}; // predictor matrix
-	${4:int<lower=0,upper=1> y[N]}; // Observations
+	int<lower=0> N; // number of observations
+	int<lower=0> K; // number of predictors (including intercept)
+	matrix[N, K] X; // predictor matrix
+	int<lower=0,upper=1> y[N]; // Observations
 }
 
 parameters {
-	${5:vector[K] beta};
+	vector[K] beta;
 }
 
 transformed parameters {
@@ -17,8 +17,7 @@ transformed parameters {
 model {
 	// beta ~ normal(0, 1000);
 	// y ~ bernoulli(Phi_approx(X * beta, sigma))}; // probit
-	${7:y ~ bernoulli_logit(X * beta, sigma)};
-	$0
+	y ~ bernoulli_logit(X * beta, sigma);
 }
 
 generated quantities {
