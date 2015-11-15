@@ -1,5 +1,5 @@
 snippet stan_bernoulli "bernoulli outcomes regression" b
-// pg 40
+// 2.8 pg 49 (edit)
 data {
 	int<lower=0> N; // number of observations
 	int<lower=0> K; // number of predictors (including intercept)
@@ -17,7 +17,7 @@ transformed parameters {
 model {
 	// beta ~ normal(0, 1000);
 	// y ~ bernoulli(Phi_approx(X * beta, sigma))}; // probit
-	y ~ bernoulli_logit(X * beta, sigma);
+	y ~ bernoulli_logit(X * beta);
 }
 
 generated quantities {

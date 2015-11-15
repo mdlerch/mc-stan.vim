@@ -1,7 +1,7 @@
 snippet stan_linearmodel "linear regression with gaussian errors" b
-// pg 33
+// 2.8 pg42 (edit)
 data {
-	int<lower=0> N; // number of objservations
+	int<lower=0> N; // number of observations
 	int<lower=0> K; // number of predictors (including intercept)
 	matrix[N, K] X; // predictor matrix
 	vector[N] y; // Observations

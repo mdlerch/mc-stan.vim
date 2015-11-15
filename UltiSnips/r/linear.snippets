@@ -1,0 +1,8 @@
+snippet stan_linearmodel "linear regression with gaussian errors" b
+n <- 100
+y <- rnorm(n)
+x <- cbind(rep(1, n), rnorm(n), rnorm(n))
+k <- ncol(x)
+standata <- list(N = n, K = k, X = x, y = y)
+
+endsnippet

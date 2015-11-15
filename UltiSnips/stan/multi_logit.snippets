@@ -1,32 +1,30 @@
 snippet stan_multi_logit "extension of bernoulli to multi cat" b
-// pg 41
+// 2.8 pg 51 (edit)
 data {
-	int<lower=0> N; // number of objservations
+	int<lower=0> N; // number of observations
 	int<lower=0> K; // number of predictors (including intercept)
 	vector[K] X[N]; // predictor matrix
-	int<lower=0> G; // number of categories
+	int<lower=0> D; // number of categories
 	int<lower=0> y[N]; // Observations
 }
 
 parameters {
-	vector[G, K] beta;
+	matrix[K, D] beta;
 }
 
 transformed parameters {
 }
 
 model {
-	for (g in 1:G)
+	for (k in 1:K)
 	{
-		for (k in 1:K)
-		{
-			beta[g, k] ~ normal(0, 5);
-		}
+		beta[k] ~ normal(0, 5);
 	}
 
 	for (n in 1:N)
 	{
-		y[n] ~ categorical(softmax(beta * x[n]));
+		// y[n] ~ categorical(softmax(beta * X[n])); // equivalent
+		y[n] ~ categorical_logit(beta * X[n]);
 	}
 }
 

@@ -1,0 +1,10 @@
+snippet stan_multi_logit "extension of bernoulli to multi cat" b
+n <- 100
+p <- 0.44
+d <- 4
+y <- rbinom(n, d-1, p)
+x <- cbind(rep(1, n), rnorm(n), rnorm(n))
+k <- ncol(x)
+standata <- list(N = n, K = k, D = d, X = x, y = y)
+
+endsnippet

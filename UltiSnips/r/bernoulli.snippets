@@ -1,0 +1,9 @@
+snippet stan_bernoulli "bernoulli outcomes regression" b
+n <- 100
+p <- 0.44
+y <- rbinom(n, 1, p)
+x <- cbind(rep(1, n), rnorm(n), rnorm(n))
+k <- ncol(x)
+standata <- list(N = n, K = k, X = x, y = y)
+
+endsnippet
