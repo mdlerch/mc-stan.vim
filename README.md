@@ -19,7 +19,7 @@ Take advantage of cindent for indentation of stan files.
 Snippets
 --------
 
-A rich suite of [Ultisnip](http://github.com/SirVer/ultisnips)snippets for building stan models.
+A rich suite of [Ultisnip](http://github.com/SirVer/ultisnips) snippets for building stan models.
 `stan` snippets follow a pattern of `stan_*`.
 If you use a completer like [YouCompleteMe](http://github.com/Valloric/YouCompleteMe), you can see all the snippets available just by typing `stan_`
 Snippets exist for a bare stan skeleton, traditional examples, and different classic models.
